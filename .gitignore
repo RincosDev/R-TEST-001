@@ -37,6 +37,10 @@ local.properties
 .gradle/
 build/
 !gradle/wrapper/gradle-wrapper.jar
+*.lock
+*.lockfile
+gradle.lockfile
+buildscript-gradle.lockfile
 
 # Environment variables and sensitive configuration
 .env
