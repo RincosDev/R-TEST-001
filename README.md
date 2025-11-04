@@ -8,7 +8,7 @@ Spring MVC + MyBatis + Oracle 웹 애플리케이션
 - **Spring Framework 4.3.18**
 - **MyBatis 3.4.6**
 - **Oracle Database 11g**
-- **Apache Tomcat 7.0**
+- **Apache Tomcat 8.5**
 - **jQuery 3.3.1**
 
 ## 프로젝트 구조
