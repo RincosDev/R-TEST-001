@@ -42,7 +42,11 @@ public class BoardController {
         logger.info("Board view page requested: " + boardNo);
         try {
             BoardVO board = boardService.getBoard(boardNo);
-            model.addAttribute("board", board);
+            if (board == null) {
+                model.addAttribute("error", "게시글을 찾을 수 없습니다.");
+            } else {
+                model.addAttribute("board", board);
+            }
         } catch (Exception e) {
             logger.error("Error fetching board", e);
             model.addAttribute("error", "게시글 조회 중 오류가 발생했습니다: " + e.getMessage());
@@ -83,7 +87,11 @@ public class BoardController {
         logger.info("Board edit form requested: " + boardNo);
         try {
             BoardVO board = boardService.getBoardForEdit(boardNo);
-            model.addAttribute("board", board);
+            if (board == null) {
+                model.addAttribute("error", "게시글을 찾을 수 없습니다.");
+            } else {
+                model.addAttribute("board", board);
+            }
         } catch (Exception e) {
             logger.error("Error fetching board for edit", e);
             model.addAttribute("error", "게시글 조회 중 오류가 발생했습니다: " + e.getMessage());
