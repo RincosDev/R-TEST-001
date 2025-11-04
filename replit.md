@@ -54,9 +54,18 @@ src/
 **참고**: Oracle 11g Enterprise Edition 사용
 
 ## 실행 방법
-프로젝트는 자동으로 Tomcat 서버에서 실행됩니다.
-- URL: http://localhost:5000
-- 서버 재시작: workflow를 다시 시작
+
+### Replit 환경:
+쉘에서 다음 명령어를 실행하세요:
+```bash
+./gradlew appRun
+```
+- 서버가 시작되면 자동으로 포트 5000에서 실행됩니다
+- Webview를 통해 접근 가능
+
+### Eclipse IDE:
+1. Gradle → Refresh Gradle Project
+2. Run As → Run on Server (Tomcat 8.5)
 
 ## 주요 기능
 
