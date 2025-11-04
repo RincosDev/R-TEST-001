@@ -90,21 +90,21 @@
         <h1>게시글 상세</h1>
         
         <c:if test="${not empty error}">
-            <div class="error-message">${error}</div>
+            <div class="error-message"><c:out value="${error}"/></div>
         </c:if>
         
         <c:if test="${not empty board}">
             <div class="board-view">
                 <div class="board-header">
-                    <div class="board-title">${board.title}</div>
+                    <div class="board-title"><c:out value="${board.title}"/></div>
                     <div class="board-info">
-                        <span>작성자: ${board.writer}</span>
+                        <span>작성자: <c:out value="${board.writer}"/></span>
                         <span>작성일: ${board.regDate}</span>
                         <span>조회수: ${board.viewCount}</span>
                     </div>
                 </div>
                 <div class="board-content">
-                    ${board.content}
+                    <c:out value="${board.content}"/>
                 </div>
                 <div class="board-footer">
                     <button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/board/list'">목록</button>

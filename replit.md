@@ -75,12 +75,14 @@ src/
 - 데이터 추가 (`/test/add` - POST)
 
 ## Recent Changes
-- **November 4, 2025 (Latest)**: CRUD 게시판 기능 구현
+- **November 4, 2025 (Latest)**: CRUD 게시판 기능 완료 및 테스트 성공
   - BoardVO, BoardDAO, BoardService, BoardController 생성
-  - BoardMapper.xml (ROWNUM으로 행 인덱스 자동 계산)
+  - BoardMapper.xml (Oracle 11g 호환 간소화된 쿼리)
   - 게시판 JSP 페이지 (list, view, write, edit)
   - AJAX를 통한 등록/수정/삭제 + Alert 처리
   - 게시판 테이블(TB_BOARD) 및 시퀀스(SEQ_BOARD_NO) 설계
+  - 행 번호는 JSP에서 JSTL varStatus.count로 계산 (Oracle 11g 호환성)
+  - 모든 CRUD 기능 정상 작동 확인 (Create, Read, Update, Delete)
   
 - **November 4, 2025**: 프로젝트 초기 설정 완료
   - Spring MVC + MyBatis + Oracle 구조 구축

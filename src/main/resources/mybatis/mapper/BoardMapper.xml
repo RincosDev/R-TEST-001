@@ -4,21 +4,16 @@
     
 <mapper namespace="com.rtest.mapper.BoardMapper">
     
-    <!-- 게시글 목록 조회 (행번호 포함) -->
+    <!-- 게시글 목록 조회 -->
     <select id="selectBoardList" resultType="com.rtest.vo.BoardVO">
         SELECT 
-            ROWNUM AS rowNum,
-            A.*
-        FROM (
-            SELECT 
-                BOARD_NO AS boardNo,
-                TITLE AS title,
-                WRITER AS writer,
-                TO_CHAR(REG_DATE, 'YYYY-MM-DD HH24:MI:SS') AS regDate,
-                VIEW_COUNT AS viewCount
-            FROM TB_BOARD
-            ORDER BY BOARD_NO DESC
-        ) A
+            BOARD_NO AS boardNo,
+            TITLE AS title,
+            WRITER AS writer,
+            TO_CHAR(REG_DATE, 'YYYY-MM-DD HH24:MI:SS') AS regDate,
+            VIEW_COUNT AS viewCount
+        FROM TB_BOARD
+        ORDER BY BOARD_NO DESC
     </select>
     
     <!-- 게시글 상세 조회 -->

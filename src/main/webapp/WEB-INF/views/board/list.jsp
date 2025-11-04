@@ -84,7 +84,7 @@
         </div>
         
         <c:if test="${not empty error}">
-            <div class="error-message">${error}</div>
+            <div class="error-message"><c:out value="${error}"/></div>
         </c:if>
         
         <table class="board-table">
@@ -105,11 +105,11 @@
                         </tr>
                     </c:when>
                     <c:otherwise>
-                        <c:forEach var="board" items="${boardList}">
+                        <c:forEach var="board" items="${boardList}" varStatus="status">
                             <tr>
-                                <td>${board.rowNum}</td>
-                                <td class="title" onclick="viewBoard(${board.boardNo})">${board.title}</td>
-                                <td>${board.writer}</td>
+                                <td>${status.count}</td>
+                                <td class="title" onclick="viewBoard(${board.boardNo})"><c:out value="${board.title}"/></td>
+                                <td><c:out value="${board.writer}"/></td>
                                 <td>${board.viewCount}</td>
                                 <td>${board.regDate}</td>
                             </tr>

@@ -91,7 +91,7 @@
         <h1>게시글 수정</h1>
         
         <c:if test="${not empty error}">
-            <div class="error-message">${error}</div>
+            <div class="error-message"><c:out value="${error}"/></div>
         </c:if>
         
         <c:if test="${not empty board}">
@@ -101,17 +101,17 @@
                     
                     <div class="form-group">
                         <label for="title">제목 <span style="color: red;">*</span></label>
-                        <input type="text" id="title" name="title" value="${board.title}" required maxlength="500">
+                        <input type="text" id="title" name="title" value="<c:out value='${board.title}'/>" required maxlength="500">
                     </div>
                     
                     <div class="form-group">
                         <label for="writer">작성자</label>
-                        <input type="text" id="writer" value="${board.writer}" readonly>
+                        <input type="text" id="writer" value="<c:out value='${board.writer}'/>" readonly>
                     </div>
                     
                     <div class="form-group">
                         <label for="content">내용</label>
-                        <textarea id="content" name="content">${board.content}</textarea>
+                        <textarea id="content" name="content"><c:out value="${board.content}"/></textarea>
                     </div>
                     
                     <div class="form-footer">
