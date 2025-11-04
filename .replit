@@ -26,7 +26,7 @@ outputType = "webview"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "MAVEN_OPTS=\"--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.rmi/sun.rmi.transport=ALL-UNNAMED\" mvn tomcat7:run"
+args = "./gradlew appRun"
 waitForPort = 5000
 
 [[ports]]
